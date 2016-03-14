@@ -8,4 +8,4 @@
  * http://www.eclipse.org/org/documents/edl-v10.php.
  */
 
-include 'company-kata', 'pet-kata'
+include 'company-kata', 'pet-kata', 'examples'
