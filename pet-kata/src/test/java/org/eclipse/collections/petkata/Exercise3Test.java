@@ -12,13 +12,8 @@ package org.eclipse.collections.petkata;
 
 import org.eclipse.collections.api.bag.MutableBag;
 import org.eclipse.collections.api.list.MutableList;
-import org.eclipse.collections.api.map.MutableMap;
 import org.eclipse.collections.api.multimap.list.MutableListMultimap;
 import org.eclipse.collections.api.multimap.set.MutableSetMultimap;
-import org.eclipse.collections.api.set.MutableSet;
-import org.eclipse.collections.impl.factory.Lists;
-import org.eclipse.collections.impl.factory.Maps;
-import org.eclipse.collections.impl.factory.Sets;
 import org.eclipse.collections.impl.multimap.set.UnifiedSetMultimap;
 import org.eclipse.collections.impl.test.Verify;
 import org.junit.Assert;
@@ -30,6 +25,7 @@ public class Exercise3Test extends PetDomainForKata
     public void getCountsByPetType()
     {
         MutableList<PetType> petTypes = this.people.flatCollect(Person::getPets).collect(Pet::getType);
+        // Try to replace MutableMap<PetType, Integer> with a Bag<PetType>.
         MutableBag<PetType> counts = petTypes.toBag();
 
         Assert.assertEquals(2, counts.occurrencesOf(PetType.CAT));
